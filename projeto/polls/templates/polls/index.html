@@ -1,0 +1,16 @@
+<div>
+    {% if lista_das_ultimas_questoes %}
+    <div>
+        {% for q in lista_das_ultimas_questoes %}
+        <div>
+            <p><a href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a> </p>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <div>
+            <p>Aparentemente não existem questoes armazenadas ainda...</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
